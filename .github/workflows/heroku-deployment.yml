@@ -20,4 +20,4 @@ jobs:
         heroku_email: ${{secrets.HEROKU_EMAIL}}
         heroku_app_name: ${{secrets.HEROKU_APP}}
         branch: main
-        dontuseforce: 1
+        dontuseforce: true
