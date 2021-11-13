@@ -20,12 +20,12 @@ app.controller('crudController', function($scope, $http){
 				{
 					$http.post('/oauth/token'+body, headers ).success(function(data){
 						access_token=data.access_token;	
-						$http.get('/api/person/?access_token='+access_token).success(function(persondata){
+						$http.get('/api/v1/persons/?access_token='+access_token).success(function(persondata){
 							$scope.userData = persondata.person;
 						});		
 					});
 				}else{
-					$http.get('/api/person/?access_token='+access_token).success(function(persondata){
+					$http.get('/api/v1/persons/?access_token='+access_token).success(function(persondata){
 						$scope.userData = persondata.person;
 					});	
 				}
@@ -60,11 +60,11 @@ app.controller('crudController', function($scope, $http){
 		var actionURL;
 		var httpMethod;
 		if($scope.hidden_id != undefined && $scope.hidden_id !=''){
-			actionURL="/api/person/?access_token="+access_token;
+			actionURL="/api/v1/persons/?access_token="+access_token;
 			httpMethod="PUT";
 		 
 		}else{
-			actionURL="/api/person/?access_token="+access_token;
+			actionURL="/api/v1/persons/?access_token="+access_token;
 			httpMethod="POST"
 			}
 		$http({
@@ -107,7 +107,7 @@ app.controller('crudController', function($scope, $http){
 	$scope.editPersonDetails = function(id){
 		$http({
 			method:"GET",
-			url:"/api/person/"+id+"?access_token="+access_token,
+			url:"/api/v1/persons/"+id+"?access_token="+access_token,
 			data:{'id':id, 
 				'action':'fetch_single_data'
 					}
@@ -137,7 +137,7 @@ app.controller('crudController', function($scope, $http){
 		{
 			$http({
 				method:"DELETE",
-				url:"/api/person/"+id+"?access_token="+access_token,
+				url:"/api/v1/persons/"+id+"?access_token="+access_token,
 				data:{'id':id, 'action':'Delete'}
 			}).success(function(data){
 				$scope.success = true;

@@ -23,27 +23,27 @@ public class PersonConstant {
 	public static final String HOME_PAGE="home";
 	
 	/** The Constant LOGIN_ACCESS. */
-	public static final String LOGIN_ACCESS="/api";
+	public static final String LOGIN_ACCESS="/api/v1/home";
 	
 	/** The Constant LOGOUT_ACTION. */
-	public static final String LOGOUT_ACTION="/api/logout";
+	public static final String LOGOUT_ACTION="/api/v1/logout";
 	
 	/** The Constant API_ACCESS. */
-	public static final String API_ACCESS="/api/access";
+	public static final String API_ACCESS="/api/v1/access";
 	
 	/** The Constant LIST_ACCTION_REQ. */
-	public static final String LIST_ACCTION_REQ="/api/person";
+	public static final String LIST_ACCTION_REQ="/api/v1/persons";
 	
 	/** The Constant ADD_ACTION_REQ. */
-	public static final String ADD_ACTION_REQ="/api/person";
+	public static final String ADD_ACTION_REQ="/api/v1/persons";
 	
 	/** The Constant UPDATE_ACTION_REQ. */
-	public static final String UPDATE_ACTION_REQ="/api/person";
+	public static final String UPDATE_ACTION_REQ="/api/v1/persons";
 	
 	/** The Constant DELETE_ACTION_REQ. */
-	public static final String DELETE_ACTION_REQ="/api/person/{personId}";
+	public static final String DELETE_ACTION_REQ="/api/v1/persons/{personId}";
 	
 	/** The Constant GET_USER_BY_ID_ACTION_REQ. */
-	public static final String GET_USER_BY_ID_ACTION_REQ="/api/person/{personId}";
+	public static final String GET_USER_BY_ID_ACTION_REQ="/api/v1/persons/{personId}";
 
 }

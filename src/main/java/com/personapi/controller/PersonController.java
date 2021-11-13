@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,6 +39,7 @@ public class PersonController {
 	 *
 	 * @return the all person details
 	 */
+	//@Cacheable(value="persons", key="#person.id")
 	@GetMapping(value=PersonConstant.LIST_ACCTION_REQ)
 	public Map<String,List<Person>> getAllPersonDetails(){
 		
@@ -51,6 +55,7 @@ public class PersonController {
 	 * @param personid the personid
 	 * @return the person details by id
 	 */
+	@Cacheable(value="persons", key="#personId")
 	@GetMapping(value=PersonConstant.GET_USER_BY_ID_ACTION_REQ)
 	public Person getPersonDetailsById(@PathVariable int personId) {
 		
@@ -67,6 +72,7 @@ public class PersonController {
 	 * @param person the person
 	 * @return the person
 	 */
+	@CachePut(value="persons", key = "#person.id")
 	@PostMapping(value=PersonConstant.ADD_ACTION_REQ)
 	public Person addPersonDetails(@RequestBody Person person) {	
 		
@@ -84,6 +90,7 @@ public class PersonController {
 	 * @param person the person
 	 * @return the person
 	 */
+	@CachePut(value="persons", key = "#person.id")
 	@PutMapping(value=PersonConstant.UPDATE_ACTION_REQ)
 	public Person updatePersonDetails(@RequestBody Person person) {	
 		
@@ -105,6 +112,7 @@ public class PersonController {
 	 * @param personid the personid
 	 * @return the map
 	 */
+	@CacheEvict(value="persons", allEntries = true)
 	@DeleteMapping(value=PersonConstant.DELETE_ACTION_REQ)
 	public Map<String,String> deletePersonById(@PathVariable int personId) {
 		
@@ -118,6 +126,7 @@ public class PersonController {
 		return l_map;
 				
 	}
+	
 	
 
 }
