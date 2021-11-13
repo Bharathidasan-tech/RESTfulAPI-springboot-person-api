@@ -15,7 +15,7 @@ An example PERSON RESTful API built on Spring Boot.
 
 ## Redis Cache
 
-Redis cache is used ofr cache management feature offered by Redis. Redis is normally used as a cache to store repeatedly accessed data in memory so that to increase our application performance. 
+Redis cache is used for cache management feature offered by Redis. Redis is normally used as a cache to store repeatedly accessed data in memory so that to increase our application performance. 
 
 ##  @EnableCaching 
 We apply this annotation at the main class (starter class) of our application in order to tell Spring Container that we need Caching feature in our application.
@@ -46,17 +46,21 @@ Follow the link : https://redis.io/topics/quickstart
 
 Getting started with Redis is quite easy and straightforward. Using Homebrew, you can get it up and running within a couple of commands:
 
-To install Redis on Mac: brew install redis
+To install Redis on Mac: 
+    <strong>brew install redis</strong>
 
-Start Redis server: brew services start redis
+Start Redis server: 
+    <strong>brew services start redis</strong>
 
-Stop Redis server: brew services stop redis
+Stop Redis server: 
+    <strong>brew services stop redis</strong>
 
-Restart Redis server: brew services restart redis
+Restart Redis server: 
+    <strong>brew services restart redis</strong>
 
-Run command redis-cli ping. If response to this command is <strong>PONG<strong>, your redis server is running ok.
+Run command redis-cli ping. If response to this command is <strong>PONG</strong>, your redis server is running ok.
 
-# To Access API Home
+# To Access API UI
 
 ULR: http://localhost:8080/api/v1/home
 
