@@ -72,11 +72,11 @@ ULR: http://localhost:8080/api/v1/home
 
 ### API Access
 
-METHOD | PATH                                                  | DESCRIPTION 
--------|-------------------------------------------------------|------------
-POST   | /oauth/token                                          | get oauth token to access the API
-GET    | /api/v1/person/?access_token={token_value}            | get all person list
-GET    | /api/v1/person/{person_id}?access_token={token_value} | get person details by ID list
-POST   | /api/v1/person/?access_token={token_value}            | save person details 
-PUT    | /api/v1/person/?access_token={token_value}            | update person
-DELETE | /api/v1/person/{person_id}?access_token={token_value} | delete person
+METHOD | PATH                                                   | DESCRIPTION 
+-------|--------------------------------------------------------|------------
+POST   | /oauth/token                                           | get oauth token to access the API
+GET    | /api/v1/persons/?access_token={token_value}            | get all person list
+GET    | /api/v1/persons/{person_id}?access_token={token_value} | get person details by ID list
+POST   | /api/v1/persons/?access_token={token_value}            | save person details 
+PUT    | /api/v1/persons/?access_token={token_value}            | update person
+DELETE | /api/v1/persons/{person_id}?access_token={token_value} | delete person
